@@ -1,0 +1,28 @@
+# -*- coding:utf-8 -*-
+'''
+Created on 2016年5月27日
+
+@author: huangshizhi
+'''
+
+import json
+
+#obj对象为dict对象
+obj = {"code":100000,"text":"谢谢，祝愿你也是"}
+'''
+使用json.dumps序列化python基本类型
+序列化函数dumps的几个常用参数：
+ 
+    separators: 指定生成的json字符串所用的分隔符，两个分别用于代替“,”、“:”。
+    indent:    用于格式化生成的json字符串，接受整数参数的缩进量。
+    sort_key: true/false，指定dict在序列化时是否按照key排序。
+    ensure_ascii 
+'''
+encodejson = json.dumps(obj, indent =4, sort_keys = True,ensure_ascii=False)
+print(encodejson,type(encodejson))
+#json.loads方法进行反序列化
+decodejson = json.loads(encodejson)
+# print("result  \n"+result)
+print(decodejson,type(decodejson))
+#取出key='text'的值
+print(decodejson['text'])
