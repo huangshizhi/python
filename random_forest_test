@@ -1,0 +1,15 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Jun  6 17:22:07 2016
+
+@author: huangshizhi
+"""
+
+#使用随机森林进行分类,正确率100%
+from sklearn.datasets import load_iris
+from sklearn.ensemble import RandomForestClassifier
+iris = load_iris()
+rfc = RandomForestClassifier()
+y_pred_rfc = rfc.fit(iris.data, iris.target)
+y_pred_rfc.score(iris.data, iris.target)
+
