@@ -8,6 +8,7 @@ Created on Mon Jun 13 17:44:15 2016
 """
 ==================================================
 Plot different SVM classifiers in the iris dataset
+参见:http://scikit-learn.org/stable/auto_examples/svm/plot_iris.html#example-svm-plot-iris-py
 ==================================================
 
 Comparison of different linear SVM classifiers on a 2D projection of the iris
