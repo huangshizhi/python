@@ -1,0 +1,41 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Jul 28 09:13:36 2016
+
+@author: huangshizhi
+"""
+
+"""
+数据预处理阶段,目标值向量化
+
+"""
+
+y = ['密码重置','订单支付','订单支付,出行-机票',
+              '订单支付,出行-汽车','个人求职-面试']
+#将y变成y_label
+y_label= []
+for i in y:
+    y_label.append(i.split(',')) 
+
+#y_label=[['密码重置'],['订单支付'],['订单支付','出行-机票'],['订单支付','出行-汽车'],['个人求职-面试']]
+
+
+from sklearn import preprocessing
+#使用LabelEncoder()方法,把一个标签变成一个值,Encode labels with value between 0 and n_classes-1.
+le = preprocessing.LabelEncoder()
+le.fit(y)
+y_train = le.transform(y)
+
+
+#可一次将多个标签数值化Transform between iterable of iterables and a multilabel format
+mlb = preprocessing.MultiLabelBinarizer()
+mlb.fit(y_label)
+mlb.transform(y_label)
+print(list(mlb.classes_))
+
+#LabelBinarizer():convert multi-class labels to binary labels
+import numpy as np
+lb = preprocessing.LabelBinarizer()
+lb.fit(np.array([[0, 1, 1], [1, 0, 0]])) #只能传入数值
+for i in range(len(lb.classes_)):
+    print('{0} : {1}'.format(i,lb.classes_[i]))
