@@ -81,6 +81,15 @@ gbmr = GBMRegressor(exec_path=r'F:\software\PYTHON_LIB\LightGBM\Release', # Ligh
     early_stopping_round=10
 )
 
+#learning_rate=0.1,MSE =1148
+#learning_rate=0.05,MSE =1144
+#learning_rate=0.01,MSE =1143.42
+#learning_rate=0.01,num_leaves=30,MSE =1141.719
+#learning_rate=0.01,num_leaves=300,num_threads=20,MSE =1141.719
+#learning_rate=0.001,num_leaves=100,num_threads=100,MSE =1137
+#metric='huber',learning_rate=0.01,num_leaves=100,MSE =1134.7
+#metric='huber',learning_rate=0.001,num_leaves=30,MSE =1149.38
+
 #模型训练
 gbmr.fit(X_train, y_train, test_data=[(X_valid, y_valid)])
 
